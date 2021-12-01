@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Demo</title>
+</head>
+<body>
+    <h1>HTML5 Graphics - Using &lt; CANVAS&gt; Element</h1>
+    <canvas id="mycanvas" width="500" height="200"
+     style="border:1px solid black ;">
+
+    </canvas>
+
+    <script>
+        var c= document.getElementById("mycanvas");
+        var ctx = c.getContext("2d");
+
+        ctx.beginPath();
+        ctx.arc(100,75,50,0,2*Math.PI);
+        ctx.stroke();
+ 
+        ctx.beginPath();
+        ctx.arc(100,150,50,0,1*Math.PI);
+        ctx.fillStyle="aqua";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(250,100,50,0,2*Math.PI);// outer circle
+        ctx.moveTo(285,100);
+        ctx.arc(250,100,35,0,1*Math.PI);// mouth
+        ctx.moveTo(240,90);
+        ctx.arc(235,90,5,0,2*Math.PI)//Left eye
+        ctx.moveTo(270,90);
+        ctx.arc(265,90,5,0,2*Math.PI)//right eye
+        ctx.stroke();
+
+    </script>
+</body>
+</html>
